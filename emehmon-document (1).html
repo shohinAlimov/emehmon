@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document of Customer</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f2f5;
+        color: #222;
+        min-height: 100vh;
+      }
+
+      /* ── LOGO AREA ── */
+      .logo-area {
+        background: #fff;
+        padding: 16px 32px;
+      }
+      .logo-area img {
+        height: 64px;
+        object-fit: contain;
+      }
+
+      /* ── MAIN WRAPPER ── */
+      .wrapper {
+        max-width: 960px;
+        margin: 24px auto;
+        padding: 0 20px;
+      }
+
+      /* ── NAME HEADER ── */
+      .name-header {
+        background: #fff;
+        padding: 20px 28px 0;
+        border-radius: 6px 6px 0 0;
+      }
+      .name-header h2 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a1a2e;
+        letter-spacing: 0.5px;
+        margin-bottom: 18px;
+      }
+
+      /* ── TABS ── */
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid #ddd;
+        background: #fff;
+        padding: 0 28px;
+      }
+      .tab-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #555;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-bottom: none;
+        border-radius: 4px 4px 0 0;
+        background: transparent;
+        margin-bottom: -1px;
+        transition: all 0.15s;
+        font-family: inherit;
+      }
+      .tab-btn:hover {
+        color: #222;
+      }
+      .tab-btn.active {
+        color: #222;
+        background: #fff;
+        border-color: #ddd;
+        border-bottom-color: #fff;
+        font-weight: 600;
+      }
+
+      /* ── TAB PANELS ── */
+      .tab-panel {
+        display: none;
+        background: #fff;
+        border-radius: 0 0 6px 6px;
+      }
+      .tab-panel.active {
+        display: block;
+      }
+
+      /* ── INFO TABLE ── */
+      .info-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .info-table tr {
+        border-bottom: 1px solid #ebebeb;
+      }
+      .info-table tr:last-child {
+        border-bottom: none;
+      }
+      .info-table td {
+        padding: 13px 28px;
+        font-size: 14px;
+        vertical-align: middle;
+        line-height: 1.5;
+      }
+      .info-table td:first-child {
+        font-weight: 700;
+        width: 38%;
+      }
+      .info-table td:last-child {
+        font-weight: 400;
+        color: #333;
+      }
+
+      /* ── CHILDREN TABLE ── */
+      .child-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .child-table thead tr {
+        border-bottom: 2px solid #ebebeb;
+      }
+      .child-table th {
+        padding: 12px 28px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #333;
+        text-align: left;
+      }
+      .child-table td {
+        padding: 20px 28px;
+        font-size: 13.5px;
+        color: #888;
+        text-align: center;
+      }
+
+      .flag {
+        font-size: 18px;
+        vertical-align: middle;
+        margin-right: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- LOGO -->
+    <div class="logo-area">
+      <img
+        src="https://emehmon.uz/assets/images/logo-sm.png"
+        alt="Uzbekistan"
+        onerror="
+          this.outerHTML =
+            '<strong style=\'font-size:26px;color:#1a3a6b;\'>UZBEKISTAN</strong>'
+        "
+      />
+    </div>
+
+    <div class="wrapper">
+      <div class="name-header">
+        <h2>
+          №11-02475826-26 &nbsp;&nbsp; ALIMOV &nbsp;&nbsp; FIRDAVS &nbsp;&nbsp;
+          XXX
+        </h2>
+      </div>
+
+      <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'malumot')">
+          Ma'lumot
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'qoshimcha')">
+          Qo'shimcha ma'lumot
+        </button>
+        <button class="tab-btn" onclick="openTab(event, 'bola')">Bola</button>
+      </div>
+
+      <!-- TAB 1 -->
+      <div id="malumot" class="tab-panel active">
+        <table class="info-table">
+          <tr>
+            <td>Ro'yxat №</td>
+            <td>11-02475826-26</td>
+          </tr>
+          <tr>
+            <td>To'liq ism</td>
+            <td>ALIMOV &nbsp;&nbsp; FIRDAVS &nbsp;&nbsp; XXX</td>
+          </tr>
+          <tr>
+            <td>Tug'ilgan sanasi</td>
+            <td>14.06.1981</td>
+          </tr>
+          <tr>
+            <td>Tug'ilgan mamlakat</td>
+            <td><span class="flag">🇷🇺</span> - ROSSIYA FEDERATSIYASI (RUS)</td>
+          </tr>
+          <tr>
+            <td>Fuqaroligi</td>
+            <td><span class="flag">🇷🇺</span> - ROSSIYA FEDERATSIYASI (RUS)</td>
+          </tr>
+          <tr>
+            <td>Qayerdan</td>
+            <td><span class="flag">🇨🇳</span> - XITOY (CHN)</td>
+          </tr>
+          <tr>
+            <td>Kelgan (kun)</td>
+            <td>177</td>
+          </tr>
+          <tr>
+            <td>Miqdor (UZS):</td>
+            <td>82 400.00</td>
+          </tr>
+          <tr>
+            <td>Jins</td>
+            <td>Erkak</td>
+          </tr>
+          <tr>
+            <td>Kelgan vaqti</td>
+            <td>23.02.2026 00:00</td>
+          </tr>
+          <tr>
+            <td>Propiska joyi</td>
+            <td>Baynalminal MFY, Mironshox 8-tor ko'chasi, 18/7-uy</td>
+          </tr>
+          <tr>
+            <td>Tashrif turi</td>
+            <td>Частный</td>
+          </tr>
+          <tr>
+            <td>Mehmon turi</td>
+            <td>Tourist</td>
+          </tr>
+          <tr>
+            <td>Saqlangan</td>
+            <td>23.02.2026 12:14</td>
+          </tr>
+          <tr>
+            <td>Yangilangan</td>
+            <td>23.02.2026 12:14</td>
+          </tr>
+          <tr>
+            <td>Joylashtirish vositalari</td>
+            <td>ТОШКЕНТ ШАҲАР МИРОБОД ТУМАНИ ИИБ</td>
+          </tr>
+          <tr>
+            <td>Administrator</td>
+            <td>D. SUYAROV (+937258888)</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- TAB 2 -->
+      <div id="qoshimcha" class="tab-panel">
+        <table class="info-table">
+          <tr>
+            <td>Hujjat turi</td>
+            <td>Паспорт &nbsp;&nbsp; 662265963</td>
+          </tr>
+          <tr>
+            <td>Pasport sanasi / kim bergan</td>
+            <td>14.09.2021 &nbsp;&nbsp; Ma'lumot yo'q.</td>
+          </tr>
+          <tr>
+            <td>Viza №</td>
+            <td>
+              Ma'lumot yo'q. &nbsp;&nbsp; Ma'lumot yo'q.<br />
+              <span style="color: #999; font-size: 13px"
+                >Viza sanasi: --/--/---- | --/--/----</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Kpp va sana</td>
+            <td>№ &nbsp;&nbsp; Kelgan (kun): 20.02.2026</td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- TAB 3 -->
+      <div id="bola" class="tab-panel">
+        <table class="child-table">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>To'liq ism</th>
+              <th>Tug'ilgan sanasi</th>
+              <th>Jins</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="4">Ma'lumot yo'q.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function openTab(e, id) {
+        document
+          .querySelectorAll(".tab-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+        e.currentTarget.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
